@@ -12903,6 +12903,103 @@ Marta
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<p>You can also force the use of keyword arguments. In Python, you can do this using '<em>' or '</em>identifier'.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[77]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">get_type_elements</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">lst</span><span class="p">,</span> <span class="n">retType</span><span class="o">=</span><span class="nb">str</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Returns from lst the elements whose type is &#39;retType&#39;.&quot;&quot;&quot;</span>
+    <span class="n">out</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">lst</span><span class="p">:</span>
+        <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="ow">is</span> <span class="n">retType</span><span class="p">:</span>
+            <span class="n">out</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">out</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[78]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">get_type_elements</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mf">2.0</span><span class="p">,</span><span class="s1">&#39;one&#39;</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="s1">&#39;two&#39;</span><span class="p">],</span> <span class="nb">float</span><span class="p">)</span> <span class="c1"># There is only one positional argument.</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_text output_error">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">TypeError</span>                                 Traceback (most recent call last)
+<span class="ansi-green-fg">&lt;ipython-input-78-7d8aa918aa03&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span>get_type_elements<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">[</span><span class="ansi-cyan-fg">1</span><span class="ansi-blue-fg">,</span><span class="ansi-cyan-fg">2.0</span><span class="ansi-blue-fg">,</span><span class="ansi-blue-fg">&#39;one&#39;</span><span class="ansi-blue-fg">,</span><span class="ansi-cyan-fg">10</span><span class="ansi-blue-fg">,</span><span class="ansi-blue-fg">&#39;two&#39;</span><span class="ansi-blue-fg">]</span><span class="ansi-blue-fg">,</span> float<span class="ansi-blue-fg">)</span> <span class="ansi-red-fg"># There is only one positional argument.</span>
+
+<span class="ansi-red-fg">TypeError</span>: get_type_elements() takes 0 positional arguments but 2 were given</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[79]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">get_type_elements</span><span class="p">(</span><span class="n">lst</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mf">2.0</span><span class="p">,</span><span class="s1">&#39;one&#39;</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="s1">&#39;two&#39;</span><span class="p">],</span> <span class="n">retType</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span> <span class="c1"># There are no positional arguments here.</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[79]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>[2.0]</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p>We can also create anonymous or lambda functions in Python. This can be used to create temporary objects to be used in higher order functions.</p>
 
 </div>
@@ -12910,7 +13007,7 @@ Marta
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[44]:</div>
+<div class="prompt input_prompt">In&nbsp;[80]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">triple</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="o">*</span> <span class="mi">3</span> <span class="c1"># Defines a lambda or anonymous function</span>
@@ -12927,7 +13024,7 @@ Marta
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[44]:</div>
+<div class="prompt output_prompt">Out[80]:</div>
 
 
 
@@ -12944,7 +13041,7 @@ Marta
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[45]:</div>
+<div class="prompt input_prompt">In&nbsp;[81]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="nb">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">%</span><span class="k">2</span>==0, range(1,20))) # Creates a list with even numbers
@@ -12960,7 +13057,7 @@ Marta
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[45]:</div>
+<div class="prompt output_prompt">Out[81]:</div>
 
 
 
@@ -13455,6 +13552,101 @@ From outside - var is:  100
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<p>Lets now see the difference between using the 'nonlocal' and the 'global' keywords.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[53]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">var</span> <span class="o">=</span> <span class="mi">3</span>
+
+<span class="k">def</span> <span class="nf">f1</span><span class="p">():</span>
+    <span class="n">var</span> <span class="o">=</span> <span class="mi">6</span>
+    
+    <span class="k">def</span> <span class="nf">f2</span><span class="p">():</span>
+        <span class="k">global</span> <span class="n">var</span>
+        <span class="k">return</span> <span class="n">var</span>
+    
+    <span class="n">r</span> <span class="o">=</span> <span class="n">f2</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
+
+<span class="n">f1</span><span class="p">()</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>3
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[54]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">var</span> <span class="o">=</span> <span class="mi">3</span>
+
+<span class="k">def</span> <span class="nf">f1</span><span class="p">():</span>
+    <span class="n">var</span> <span class="o">=</span> <span class="mi">6</span>
+    
+    <span class="k">def</span> <span class="nf">f2</span><span class="p">():</span>
+        <span class="k">nonlocal</span> <span class="n">var</span>
+        <span class="k">return</span> <span class="n">var</span>
+    
+    <span class="n">r</span> <span class="o">=</span> <span class="n">f2</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
+
+<span class="n">f1</span><span class="p">()</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>6
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p>One more important concept we must discuss is the closure. Below, the function f defines and returns the function g, and g refers to variables defined in the scope of f. Normally, after f returns its scope becomes unreachable, and all variables defined there are reclaimed. But in this case, since g remains in scope, the scope of f must remain reachable via g. In this case, g is called a closure because it not only contains the statements defining g (its function body), but also encapsulates its enclosing scope (the scope of f).</p>
 
 </div>
@@ -13506,6 +13698,151 @@ From outside - var is:  100
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<p>Lets add a few statements and another function inside f, so to get a better sense of what is going on.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[45]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">y</span><span class="p">):</span>
+    
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Printing from inside f&#39;</span><span class="p">)</span>
+    <span class="n">z</span> <span class="o">=</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">y</span>
+
+    <span class="k">def</span> <span class="nf">g</span><span class="p">():</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Printing from inside g&#39;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">z</span>
+    
+    <span class="k">def</span> <span class="nf">h</span><span class="p">():</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Printing from inside h&#39;</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">g</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Note that function h was defined inside the scope of f, so it is not recognized outside.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[46]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">h</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_text output_error">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+<span class="ansi-green-fg">&lt;ipython-input-46-244aa7266b3f&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span>h
+
+<span class="ansi-red-fg">NameError</span>: name &#39;h&#39; is not defined</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[47]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">g</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">g</span><span class="p">))</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Printing from inside f
+&lt;class &#39;function&#39;&gt;
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[49]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">r</span> <span class="o">=</span> <span class="n">g</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Printing from inside g
+9
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p>Finally, note that in Python (unlike in some other languages), only functions and modules (files) create scope. In particular, loops do not have their own scope. Thus the loop index variable in the example below clobbers the existing variable with the same name:</p>
 
 </div>
@@ -13513,7 +13850,7 @@ From outside - var is:  100
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[56]:</div>
+<div class="prompt input_prompt">In&nbsp;[50]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">i</span> <span class="o">=</span> <span class="mi">3</span>
