@@ -12670,33 +12670,29 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>You can use lists to implement stacks (last-in / first-out) or queues (first-in / first-out). However lists are not efficient for the later purpose. We are going to start by creating two functions, one that adds and removes an element to the end of the list and another one that adds and removes an element to the beginning of the list. The first argument of both these functions is a sequence. The second argument is the number of times one would like those adds and removes repeated.</p>
+<p>You can use lists to implement stacks (last-in / first-out) or queues (first-in / first-out). However lists are not efficient for the later purpose. We are going to start by creating two functions, one that adds and removes an element to the end of the list and another one that adds and removes an element to the beginning of the list.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[31]:</div>
+<div class="prompt input_prompt">In&nbsp;[153]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">append_pop</span><span class="p">(</span><span class="n">mySeq</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot; Append and pop an element at the end of mySeq n times.&quot;&quot;&quot;</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">append_pop</span><span class="p">(</span><span class="n">myList</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Append and pop an element at the end of myList n times.&quot;&quot;&quot;</span>
     
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-        <span class="n">mySeq</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
-        <span class="n">mySeq</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+        <span class="n">myList</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">myList</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
         
-<span class="k">def</span> <span class="nf">insert_pop</span><span class="p">(</span><span class="n">mySeq</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot; Insert and pop an element at the beginning of mySeq n times .&quot;&quot;&quot;</span>
+<span class="k">def</span> <span class="nf">insert_pop</span><span class="p">(</span><span class="n">myList</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Insert and pop an element at the beginning of myList n times .&quot;&quot;&quot;</span>
     
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-        <span class="k">if</span> <span class="ow">not</span> <span class="nb">type</span><span class="p">(</span><span class="n">mySeq</span><span class="p">)</span> <span class="ow">is</span> <span class="n">deque</span><span class="p">:</span>
-            <span class="n">mySeq</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
-            <span class="n">mySeq</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="n">mySeq</span><span class="o">.</span><span class="n">appendleft</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
-            <span class="n">mySeq</span><span class="o">.</span><span class="n">popleft</span><span class="p">()</span>         
+        <span class="n">myList</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">myList</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -12715,7 +12711,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[32]:</div>
+<div class="prompt input_prompt">In&nbsp;[154]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">get_run_time</span><span class="p">(</span><span class="n">numbers</span><span class="p">):</span>
@@ -12747,7 +12743,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[33]:</div>
+<div class="prompt input_prompt">In&nbsp;[155]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
@@ -12774,8 +12770,8 @@ div#notebook {
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>[0, 1, 2, 3, 4]
-First function took 0.2748119831085205 seconds to run!
-Second function took 0.44170618057250977 seconds to run!
+First function took 0.17480897903442383 seconds to run!
+Second function took 0.3220231533050537 seconds to run!
 [0, 1, 2, 3, 4]
 </pre>
 </div>
@@ -12789,14 +12785,39 @@ Second function took 0.44170618057250977 seconds to run!
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Now we test 'deque', designed to have fast appends and pops at both ends, so to provide a more efficient queue.</p>
+<p>The use of lists in Python to implement queues is not recommended. Now we use 'deque', designed to have fast appends and pops at both ends, so to provide a more efficient queue. Lets redefine our functions to use deque instead.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[34]:</div>
+<div class="prompt input_prompt">In&nbsp;[156]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">append_pop</span><span class="p">(</span><span class="n">mySeq</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Append and pop an element at the end of mySeq n times.&quot;&quot;&quot;</span>
+    
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+        <span class="n">mySeq</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">mySeq</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+        
+<span class="k">def</span> <span class="nf">insert_pop</span><span class="p">(</span><span class="n">mySeq</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Insert and pop an element at the beginning of mySeq n times .&quot;&quot;&quot;</span>
+    
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+        <span class="n">mySeq</span><span class="o">.</span><span class="n">appendleft</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">mySeq</span><span class="o">.</span><span class="n">popleft</span><span class="p">()</span>         
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[157]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">dequeNumbers</span> <span class="o">=</span> <span class="n">deque</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span> <span class="c1"># Creates a deque object</span>
@@ -12820,8 +12841,8 @@ Second function took 0.44170618057250977 seconds to run!
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>deque([0, 1, 2, 3, 4])
-First function took 0.14533495903015137 seconds to run!
-Second function took 0.2765998840332031 seconds to run!
+First function took 0.1555640697479248 seconds to run!
+Second function took 0.14962291717529297 seconds to run!
 deque([0, 1, 2, 3, 4])
 </pre>
 </div>
